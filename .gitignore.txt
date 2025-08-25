@@ -1,0 +1,16 @@
+# Maven
+/target/
+pom.xml.tag
+pom.xml.versionsBackup
+pom.xml.releaseBackup
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws

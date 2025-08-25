@@ -1,0 +1,169 @@
+/* Overall Dark Theme */
+.root {
+    -fx-background-color: #1a1a1a;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Base Styles for Containers */
+.container {
+    -fx-background-color: #2b2b2b;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.2, 0, 8);
+}
+
+/* Styles for the Login/Sign-up Container */
+.login-container {
+    -fx-background-color: #2b2b2b;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.2, 0, 8);
+    -fx-spacing: 20;
+}
+
+/* Header and Title Styles */
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e0e0e0;
+}
+
+.label {
+    -fx-text-fill: #b0b0b0;
+}
+
+/* Input Field Styles */
+.text-field, .password-field {
+    -fx-background-color: #3a3a3a;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: #707070;
+    -fx-text-fill: #ffffff;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #7986cb;
+    -fx-border-width: 1;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-color: #7986cb;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #5c6bc0;
+}
+
+/* Link-like Buttons (for sign up and forgot password) */
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7986cb;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+.link-button:hover {
+    -fx-text-fill: #a2aedc;
+}
+
+/* Alert Styles */
+.alert .header-panel {
+    -fx-background-color: #333333;
+}
+.alert .content {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: #e0e0e0;
+}
+
+.alert:confirm .button {
+    -fx-background-color: #7986cb;
+    -fx-text-fill: white;
+}
+
+.sidebar-panel {
+    -fx-background-color: #2b2b2b;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.2, 0, 8);
+}
+
+.main-content-panel {
+    -fx-background-color: #2b2b2b;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.2, 0, 8);
+    -fx-spacing: 20;
+    -fx-padding: 20;
+}
+
+.text-area {
+    -fx-control-inner-background: #3a3a3a;
+    -fx-background-color: #3a3a3a;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+}
+
+/* Style the text content inside the TextArea explicitly */
+.text-area .content {
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Ensure the text node itself has the correct color */
+.text-area .content .text {
+    -fx-fill: #e0e0e0;
+}
+
+/* Make sure the cursor is visible */
+.text-area:focused {
+    -fx-highlight-fill: #7986cb;
+    -fx-highlight-text-fill: #e0e0e0;
+    -fx-border-color: #7986cb;
+    -fx-border-width: 1;
+}
+
+/* Style the scrollbar to match the dark theme */
+.text-area .scroll-bar:vertical .thumb,
+.text-area .scroll-bar:horizontal .thumb {
+    -fx-background-color: #5c5c5c;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}
+
+.text-area .scroll-bar:vertical .thumb:hover,
+.text-area .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #797979;
+}
+
+/* Styling for the ComboBoxes */
+.combo-box {
+    -fx-background-color: #3a3a3a;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: #707070;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .list-cell:filled:selected, .combo-box .list-cell:filled:selected:hover {
+    -fx-background-color: #5c6bc0;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #3a3a3a;
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-color: #707070;
+}

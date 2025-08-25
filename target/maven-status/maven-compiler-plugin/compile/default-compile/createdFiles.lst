@@ -1,0 +1,17 @@
+com\qngenius\controller\CoEController.class
+com\qngenius\model\Course.class
+com\qngenius\controller\LoginController.class
+com\qngenius\model\Subject.class
+com\qngenius\model\User.class
+com\qngenius\controller\SignUpController.class
+com\qngenius\controller\AdminController.class
+com\qngenius\model\Unit.class
+com\qngenius\Launcher.class
+com\qngenius\model\Role.class
+com\qngenius\model\ExamType.class
+com\qngenius\model\BlueprintCriteria.class
+com\qngenius\model\Blueprint.class
+com\qngenius\util\DatabaseUtil.class
+com\qngenius\MainApp.class
+com\qngenius\controller\MainAppController.class
+com\qngenius\model\Question.class

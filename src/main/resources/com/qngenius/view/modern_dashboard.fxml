@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qngenius.controller.ModernDashboardController">
+   <top>
+      <!-- Header Section -->
+      <VBox styleClass="dashboard-header">
+         <padding>
+            <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+         </padding>
+         <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <VBox>
+               <Label fx:id="welcomeLabel" styleClass="welcome-label" text="Welcome back, User">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lastLoginLabel" styleClass="subtitle-label" text="Last login: Today at 10:30 AM" />
+               <Label fx:id="userRoleLabel" styleClass="role-label" text="Role: Administrator" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <VBox alignment="TOP_RIGHT" spacing="5.0">
+               <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                  <ProgressIndicator fx:id="loadingIndicator" maxHeight="25.0" maxWidth="25.0" visible="false" />
+                  <Label fx:id="loadingStatusLabel" styleClass="status-label" visible="false" />
+               </HBox>
+               <Button onAction="#refreshDashboard" styleClass="refresh-button" text="Refresh" />
+            </VBox>
+         </HBox>
+      </VBox>
+   </top>
+   
+   <center>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+         <VBox spacing="25.0">
+            <padding>
+               <Insets bottom="30.0" left="30.0" right="30.0" top="10.0" />
+            </padding>
+            
+            <!-- Statistics Cards Row -->
+            <HBox spacing="20.0">
+               <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                  </padding>
+                  <Label styleClass="stat-title" text="Total Questions" />
+                  <Label fx:id="totalQuestionsLabel" styleClass="stat-value" text="0">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </VBox>
+               
+               <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                  </padding>
+                  <Label styleClass="stat-title" text="Subjects" />
+                  <Label fx:id="totalSubjectsLabel" styleClass="stat-value" text="0">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </VBox>
+               
+               <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                  </padding>
+                  <Label styleClass="stat-title" text="Blueprints" />
+                  <Label fx:id="totalBlueprintsLabel" styleClass="stat-value" text="0">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </VBox>
+               
+               <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                  </padding>
+                  <Label styleClass="stat-title" text="Recent Activity" />
+                  <Label fx:id="recentActivityLabel" styleClass="stat-value" text="0">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </VBox>
+            </HBox>
+            
+            <!-- Charts Row -->
+            <HBox spacing="20.0">
+               <!-- Question Type Distribution -->
+               <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <PieChart fx:id="questionTypeChart" prefHeight="300.0" />
+               </VBox>
+               
+               <!-- Difficulty Level Distribution -->
+               <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <BarChart fx:id="difficultyChart" prefHeight="300.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+               </VBox>
+            </HBox>
+            
+            <!-- Activity and Actions Row -->
+            <HBox spacing="20.0">
+               <!-- Recent Activity Timeline -->
+               <VBox styleClass="content-card" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <Label styleClass="section-title" text="Recent Activity">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="recentActivityTable" prefHeight="250.0">
+                     <columns>
+                        <TableColumn fx:id="activityTimeColumn" prefWidth="100.0" text="Time" />
+                        <TableColumn fx:id="activityTypeColumn" prefWidth="120.0" text="Type" />
+                        <TableColumn fx:id="activityDescriptionColumn" prefWidth="250.0" text="Description" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </VBox>
+               
+               <!-- Quick Actions Panel -->
+               <VBox styleClass="content-card" minWidth="200.0">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <Label styleClass="section-title" text="Quick Actions">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="quickActionsPane" spacing="10.0">
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </VBox>
+               </VBox>
+            </HBox>
+            
+            <!-- Additional Charts Row -->
+            <HBox spacing="20.0">
+               <!-- Activity Line Chart -->
+               <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <LineChart fx:id="activityChart" prefHeight="250.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </VBox>
+               
+               <!-- Subject Distribution Area Chart -->
+               <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <AreaChart fx:id="subjectDistributionChart" prefHeight="250.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </AreaChart>
+               </VBox>
+            </HBox>
+         </VBox>
+      </ScrollPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" styleClass="login-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qngenius.controller.LoginController">
+   <children>
+      <Label styleClass="title-label" text="QnGenius Login">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <GridPane hgap="10.0" styleClass="login-grid" vgap="10.0">
+         <children>
+            <Label styleClass="form-label" text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="usernameField" promptText="Enter your username" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label styleClass="form-label" text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <VBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Button onAction="#handleLoginButtonAction" prefWidth="200.0" text="Login" />
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button onAction="#handleForgotPasswordAction" styleClass="link-button" text="Forgot Password?" />
+                  <Button onAction="#handleSignUpAction" prefWidth="120.0" text="Sign Up" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+   </padding>
+</VBox>

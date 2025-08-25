@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="container" alignment="TOP_CENTER" spacing="20.0" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qngenius.controller.CoEController">
+
+    <HBox alignment="CENTER_RIGHT" spacing="10.0" style="-fx-padding: 20px;">
+        <Label fx:id="usernameLabel" styleClass="label" text="Welcome, CoE" />
+        <Button text="Logout" onAction="#handleLogoutButtonAction" styleClass="link-button" />
+    </HBox>
+
+    <VBox alignment="TOP_CENTER" spacing="15.0" style="-fx-padding: 20px;">
+        <Label text="Generate Question Paper" styleClass="title" />
+
+        <HBox alignment="CENTER" spacing="15.0">
+            <ComboBox fx:id="subjectComboBox" promptText="Select Subject" styleClass="combo-box" />
+            <ComboBox fx:id="examTypeComboBox" promptText="Select Exam Type" styleClass="combo-box" />
+            <ComboBox fx:id="blueprintComboBox" promptText="Select Blueprint" styleClass="combo-box" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="15.0">
+            <Button text="Generate Paper" onAction="#handleGenerateButtonAction" styleClass="button-primary" />
+            <Button text="Export as PDF" onAction="#handleExportButtonAction" styleClass="button-secondary" />
+        </HBox>
+
+        <TextArea fx:id="paperTextArea" VBox.vgrow="ALWAYS" editable="false" styleClass="text-area" />
+    </VBox>
+</VBox>
